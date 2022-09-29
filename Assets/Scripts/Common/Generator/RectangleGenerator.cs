@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Common
+namespace Common.Generator
 {
     public class RectangleGenerator : EnemyGenerator
     {
@@ -14,7 +13,7 @@ namespace Common
         protected override Vector3 GetSpawnPosition()
         {
             var randomPointWidth = Random.Range(Position.x, Position.x+_width);
-            var randomPointHeight = Random.Range(Position.y, Position.y+_height);
+            var randomPointHeight = Random.Range(Position.z, Position.z+_height);
             var spawnPoint = new Vector3(randomPointWidth, 0, randomPointHeight);
             return spawnPoint;
         }

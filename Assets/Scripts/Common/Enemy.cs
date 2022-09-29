@@ -24,6 +24,11 @@ namespace Common
         private static readonly int Attack = Animator.StringToHash("Attack");
         private static readonly int IsMoving = Animator.StringToHash("IsMoving");
 
+        public void SetNavTarget(IDamageable target)
+        {
+            _navTarget = target.Transform;
+        }
+        
         public void Punch()
         {
             _weaponController.Shoot();
